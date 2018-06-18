@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+            <meta charset="UTF-8">
+            <title>Vreme</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </head>
+
+    <body>
+    <i class="fas fa-bars"></i>
+    {% if podatki %}
+        <h2>Vreme v kraju {{ podatki.name }}</h2>
+
+    <i class="fas {{ podatki.icon }}"></i>
+    <p>Opis: {{ podatki.weather[0].description }}</p>
+    <p>Trenutna temperatura: {{ podatki.main.temp }} stopinj C</p>
+    {% endif %}
+    <form method="post">
+      <label for="city">Vpiši mesto:</label>
+      <input type="text" id="city" name="city">
+      <button type="submit">Išči</button>
+    </form>
+    </body>
+</html>
